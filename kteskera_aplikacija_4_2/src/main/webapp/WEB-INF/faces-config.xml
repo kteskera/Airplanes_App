@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.3"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    <navigation-rule>
+        <from-view-id>/prijava.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>izbornik</from-outcome>
+            <to-view-id>/izbornik.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/izbornik.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>korisnici</from-outcome>
+            <to-view-id>/korisnici.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>dnevnik</from-outcome>
+            <to-view-id>/pregledDnevnika.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>jmsPoruke</from-outcome>
+            <to-view-id>/pregledJMS.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

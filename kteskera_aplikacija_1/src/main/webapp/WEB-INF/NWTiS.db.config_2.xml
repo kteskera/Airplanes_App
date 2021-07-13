@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija</comment>
+<entry key="server.database">jdbc:derby://localhost:1527/</entry>
+<entry key="admin.username">nwtis_admin</entry>
+<entry key="admin.password">nwtis_foi</entry>
+<entry key="admin.database">kteskera_bp_1</entry>
+<entry key="user.username">nwtis_admin</entry>
+<entry key="user.password">nwtis_foi</entry>
+<entry key="user.database">kteskera_bp_1</entry>
+<entry key="jdbc.mysql">com.mysql.cj.jdbc.Driver</entry>
+<entry key="jdbc.derby">org.apache.derby.jdbc.ClientDriver</entry>
+<entry key="LocationIQ.token">pk.73d54d9f614896aeaab5320e5fd364a9</entry>
+<entry key="OpenWeatherMap.apikey">5996595517577f43cdf8ae2be22f7881</entry>
+<entry key="OpenSkyNetwork.korisnik">kteskera</entry>
+<entry key="OpenSkyNetwork.lozinka">Teskera23565241</entry>
+<entry key="preuzimanje.status">true</entry>
+<entry key="preuzimanje.pocetak">01.01.2021</entry>
+<entry key="preuzimanje.kraj">05.01.2021</entry>
+<entry key="preuzimanje.ciklus">300</entry>
+<entry key="preuzimanje.pauza">1000</entry>
+</properties>

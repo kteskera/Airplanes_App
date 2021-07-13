@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>  
+        <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js" type="text/javascript"></script>  
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" />  
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                $('.avioni').DataTable();
+                $('.meteo').DataTable();
+            });
+        </script>  
+    </h:head>
+    <h:body>
+        <h1>Pregled aerodroma</h1>
+        <ul>
+            <li><h:link value="Početak" outcome="faces/izbornik.xhtml"/></li>
+        </ul>
+        <h:form>
+            <h:selectOneMenu id="aerodrom" value="#{aerodromi.icao}">
+                <f:selectItems value="#{aerodromi.lista}" var="a" itemLabel="#{a.icao} - #{a.naziv}" itemValue="#{a.icao}"/>
+            </h:selectOneMenu>
+
+            <br/>
+            <h:outputLabel value="Datum: " />
+            <h:inputText id="datum" value="#{aerodromi.datum}" />
+            <br/>
+            <h:commandButton value="Prikaži letove"  action="#{aerodromi.prikaziLetove()}" >
+                <f:ajax event="action" execute="aerodrom datum" render="avioni @form"/>
+               
+            </h:commandButton>
+
+            <hr/>
+            
+            <h:dataTable id="avioni" styleClass="avioni" value = "#{aerodromi.listaAviona}" var = "avioni">
+
+                <h:column>    				
+                    <f:facet name = "header">Naziv</f:facet>    				
+                        #{avioni.callsign}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Polazište</f:facet>
+                        #{avioni.estDepartureAirport}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Pristanište</f:facet>
+                        #{avioni.estArrivalAirport}
+                </h:column>
+
+            </h:dataTable>
+
+        </h:form>
+        <hr/>
+
+        <h:form>
+
+
+            <h:selectOneMenu id="aerodrom" value="#{aerodromi.icao}">
+                <f:selectItems value="#{aerodromi.lista}" var="a" itemLabel="#{a.icao} - #{a.naziv}" itemValue="#{a.icao}"/>
+            </h:selectOneMenu>
+
+            <br/>
+            <h:outputLabel value="Datum: " />
+            <h:inputText id="datum" value="#{aerodromi.datum}" />
+            <br/>
+            <h:commandButton value="Prikaži meteo podatke"  action="#{aerodromi.prikaziMeteo()}" >
+                <f:ajax event="action" execute="aerodrom datum" render="meteo @form"/>
+                
+            </h:commandButton>
+
+            <h:dataTable id="meteo" styleClass="meteo" value = "#{aerodromi.listaMeteo}" var = "meteo">
+
+                <h:column>    				
+                    <f:facet name = "header">Ident</f:facet>    				
+                        #{meteo.ident}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Temperatura</f:facet>
+                        #{meteo.temperatura}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Vlaga</f:facet>
+                        #{meteo.vlaga}
+                </h:column>
+                <h:column>    				
+                    <f:facet name = "header">tlak</f:facet>    				
+                        #{meteo.tlak}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Brzina Vjetra</f:facet>
+                        #{meteo.brzinaVjetra}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Smjer Vjetra</f:facet>
+                        #{meteo.smjerVjetra}
+                </h:column>
+
+            </h:dataTable>
+
+        </h:form>
+    </h:body>
+</html>
+

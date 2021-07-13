@@ -1,0 +1,9 @@
+#NWTiS 2021.
+#Tue Mar 09 15:22:47 CET 2021
+port=8000
+maks.dretvi=5
+maks.zahtjeva=10
+sjednica.trajanje=1000000
+posluzitelj=localhost
+vrijeme=10
+stranicenje=5

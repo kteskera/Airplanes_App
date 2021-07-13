@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Aplikacija 4</title>
+    </h:head>
+    <h:body>
+        <h1>Aplikacija 4</h1>
+        <ul>
+            <h:form>
+                <h:commandButton value="odjava"  action="#{prijavaKorisnika.odjaviKorisnika()}" >
+                    <f:ajax event="action" render="poruka"/>
+                </h:commandButton>
+            </h:form>
+            <br/>
+            
+            <h:form>
+                <h:commandButton value="Popis svih korisnika"  action="#{popisKorisnika.dajKorisnike()}" >
+                    <f:ajax event="action" render="poruka2"/>
+                </h:commandButton>
+
+                <h:outputLabel id="poruka2" value="#{popisKorisnika.poruka}"/>
+            </h:form>
+            <br/>
+            <h:form>
+                <h:commandButton value="Pregled JMS poruka"  action="#{pregledJmsPoruka.dajPoruke()}" >
+                    <f:ajax event="action" render="poruka3"/>
+                </h:commandButton>
+
+                <h:outputLabel id="poruka3" value="#{pregledJmsPoruka.poruka}"/>
+            </h:form>
+            <br/>
+            <h:form>
+                <h:commandButton value="Pregled dnevnika"  action="#{pregledDnevnika.dajDnevnik()}" >
+                    <f:ajax event="action" render="poruka4"/>
+                </h:commandButton>
+                <h:outputLabel id="poruka4" value="#{pregledDnevnika.poruka}"/>
+            </h:form>
+               <br/>
+             <h:form>
+                <h:commandButton value="Pregled aerodroma"  action="#{aerodromi.dajAerodrome()}" >
+                    <f:ajax event="action" render="poruka5"/>
+                </h:commandButton>
+                <h:outputLabel id="poruka5" value="#{aerodromi.poruka}"/>
+            </h:form>
+        </ul>
+    </h:body>
+</html>
+
